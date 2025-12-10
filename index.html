@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touch of Dalal - Precision Artistry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-rose-light: #fff6f8;
+            --color-rose-dark: #e11d48;
+            --color-stone: #f5f5f4;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .snap-scroll-container {
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .snap-scroll-item {
+            scroll-snap-align: start;
+        }
+
+        .initial-hidden {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        .animate-reveal {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 1s ease-out, transform 0.8s ease-out;
+        }
+
+        /* Floating card effect on hero image */
+        @keyframes floatCard {
+            0% { transform: translateY(0px) translateX(0); }
+            50% { transform: translateY(-10px) translateX(4px); }
+            100% { transform: translateY(0px) translateX(0); }
+        }
+        .floating-card {
+            animation: floatCard 8s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="text-gray-900 antialiased bg-gradient-to-br from-stone-100 via-rose-50 to-rose-200">
+
+<!-- HERO -->
+<header id="hero" class="min-h-screen flex items-center px-6 md:px-10 lg:px-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-10 items-center w-full">
+
+        <!-- LEFT: TITLE -->
+        <div class="lg:col-span-3 space-y-6 md:space-y-10 relative z-10">
+            <!-- TOUCH -->
+            <h1 id="title-touch"
+                class="initial-hidden text-6xl sm:text-7xl md:text-8xl lg:text-[7.5rem] font-extrabold leading-none tracking-tight uppercase text-slate-900">
+                TOUCH
+            </h1>
+
+            <!-- OF / DALAL block -->
+            <div id="title-dalal" class="initial-hidden flex items-start space-x-4">
+                <span class="mt-5 block w-10 sm:w-14 h-[3px] bg-rose-500 rounded-full"></span>
+                <div class="leading-none">
+                    <div class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase">
+                        OF
+                    </div>
+                    <div class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight uppercase">
+                        DALAL
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tagline -->
+            <p id="hero-slogan"
+               class="initial-hidden max-w-xl text-[0.8rem] sm:text-sm md:text-base tracking-[0.28em] uppercase text-slate-600 pt-4">
+                SOUTHERN CALIFORNIA BASE. WORLDWIDE BOOKINGS.
+            </p>
+
+            <!-- CTA -->
+            <a id="hero-cta"
+               href="#services"
+               class="initial-hidden inline-flex items-center justify-center px-10 py-4 mt-4 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] bg-slate-900 text-white rounded-full shadow-lg shadow-rose-200/50 hover:bg-rose-500 hover:shadow-rose-400/60 transition transform hover:-translate-y-0.5 hover:scale-[1.02]">
+                View portfolio
+            </a>
+        </div>
+
+        <!-- RIGHT: IMAGE CARD -->
+        <div id="hero-image-box"
+             class="initial-hidden lg:col-span-2">
+            <div
+                    class="relative h-64 sm:h-80 md:h-96 lg:h-[420px] rounded-[30px] shadow-[0_26px_60px_rgba(15,23,42,0.25)] overflow-hidden bg-gray-300 floating-card
+                       lg:-mt-24 lg:-ml-16 xl:-ml-10">
+
+                <!-- Replace this background-image with one of your own looks -->
+                <div class="absolute inset-0 bg-cover bg-center"
+                     style="background-image:url('https://via.placeholder.com/1300x900?text=Touch+of+Dalal+Portfolio');">
+                </div>
+
+                <!-- soft overlay gradient -->
+                <div class="absolute inset-0 bg-gradient-to-br from-black/10 via-black/0 to-rose-500/15 mix-blend-multiply"></div>
+
+                <!-- tiny label -->
+                <div class="absolute bottom-6 left-6 bg-white/85 backdrop-blur px-4 py-2 rounded-full text-xs tracking-[0.18em] uppercase text-slate-700 shadow">
+                    Featured looks · 2025
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<hr class="border-t-[7px] border-white/50 my-12 md:my-16">
+
+<!-- SERVICES -->
+<section id="services" class="py-16 md:py-20 px-6 md:px-10 lg:px-16 max-w-7xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-14 uppercase tracking-tight">
+        <span class="border-b-4 border-rose-400 pb-1">Precision</span> Menu
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+        <article
+                class="col-span-1 md:col-span-2 p-8 md:p-10 bg-rose-100/80 hover:bg-rose-100 rounded-3xl cursor-pointer border border-rose-100 hover:border-rose-300 transition-all duration-500 hover:shadow-2xl group">
+            <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
+                Bridal Perfection
+            </h3>
+            <p class="text-base md:text-lg text-slate-700">
+                Flawless, camera-ready looks that last from the Southern California sunset to the final dance.
+            </p>
+            <a href="#contact"
+               class="mt-6 inline-flex items-center text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-rose-600 group-hover:text-rose-700">
+                Inquire about bridal
+                <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+        </article>
+
+        <article
+                class="col-span-1 p-8 md:p-10 bg-stone-50 rounded-3xl shadow-md border border-slate-100">
+            <h3 class="text-2xl font-bold text-rose-900">Editorial &amp; Shoot</h3>
+            <p class="mt-3 text-sm md:text-base text-slate-700">
+                High-contrast, high-concept makeup for commercial, print, and video work with a clean, modern edge.
+            </p>
+        </article>
+
+        <article
+                class="col-span-1 p-8 md:p-10 bg-stone-50 rounded-3xl shadow-md border border-slate-100 md:col-start-1 md:row-start-2">
+            <h3 class="text-2xl font-bold text-slate-900">Lessons &amp; Consult</h3>
+            <p class="mt-3 text-sm md:text-base text-slate-700">
+                Personalized lessons and product curation so your everyday glam feels polished, effortless, and you.
+            </p>
+        </article>
+
+        <article
+                class="col-span-1 md:col-span-2 p-8 md:p-10 rounded-3xl bg-gradient-to-r from-rose-600 to-rose-500 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between shadow-xl">
+            <div>
+                <p class="text-xs uppercase tracking-[0.3em] mb-2 opacity-80">Travel available</p>
+                <p class="text-2xl md:text-3xl font-bold tracking-wide uppercase">Book out of state</p>
+                <p class="text-sm mt-2 opacity-90">
+                    Destination weddings, editorial sets, and events worldwide.
+                </p>
+            </div>
+            <svg class="w-10 h-10 mt-4 sm:mt-0 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h13M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round"/>
+            </svg>
+        </article>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="py-16 md:py-20 bg-white/60 backdrop-blur">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-10 md:mb-12 uppercase tracking-tight">
+        <span class="text-rose-500">Client</span> Perspective
+    </h2>
+
+    <div class="snap-scroll-container flex space-x-6 md:space-x-8 px-6 md:px-10 lg:px-16 overflow-x-auto">
+        <!-- Card 1 -->
+        <div
+                class="snap-scroll-item flex-shrink-0 w-80 md:w-96 p-8 bg-white shadow-2xl rounded-3xl border-t-8 border-rose-300 transition hover:shadow-3xl duration-300">
+            <div class="text-4xl text-rose-500 mb-4 font-serif">❝</div>
+            <blockquote class="text-slate-700 italic text-base md:text-lg">
+                “The structure of the look was incredible. Dalal brought a high-fashion yet personal touch to my shoot.”
+            </blockquote>
+            <p class="mt-6 font-semibold text-slate-900 text-base md:text-lg">— Sarah L., Editorial Client</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+                class="snap-scroll-item flex-shrink-0 w-80 md:w-96 p-8 bg-white shadow-2xl rounded-3xl border-t-8 border-rose-300 transition hover:shadow-3xl duration-300">
+            <div class="text-4xl text-rose-500 mb-4 font-serif">❝</div>
+            <blockquote class="text-slate-700 italic text-base md:text-lg">
+                “Absolute perfection for my wedding day. The makeup survived the SoCal heat and every happy tear.”
+            </blockquote>
+            <p class="mt-6 font-semibold text-slate-900 text-base md:text-lg">— Jessica M., Bridal Client</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+                class="snap-scroll-item flex-shrink-0 w-80 md:w-96 p-8 bg-white shadow-2xl rounded-3xl border-t-8 border-rose-300 transition hover:shadow-3xl duration-300">
+            <div class="text-4xl text-rose-500 mb-4 font-serif">❝</div>
+            <blockquote class="text-slate-700 italic text-base md:text-lg">
+                “Her masterclass broke everything down step by step. My everyday routine is completely transformed.”
+            </blockquote>
+            <p class="mt-6 font-semibold text-slate-900 text-base md:text-lg">— Alex T., Lesson Client</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<footer id="contact" class="py-16 md:py-20 px-6 md:px-10 lg:px-16 max-w-7xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-4 uppercase tracking-tight">
+        Connect
+    </h2>
+    <p class="text-center text-base md:text-xl mb-10 md:mb-12 text-slate-600">
+        Southern California base. Worldwide artistry.
+    </p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12">
+        <!-- Map / visual -->
+        <div class="w-full h-72 md:h-96 rounded-3xl overflow-hidden shadow-xl bg-gray-200">
+            <div class="w-full h-full bg-cover bg-center flex items-center justify-center"
+                 style="background-image:url('https://via.placeholder.com/800x600?text=SoCal+Map+Overlay');">
+            </div>
+        </div>
+
+        <!-- Form -->
+        <form class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input type="text" placeholder="Your name"
+                       class="w-full bg-transparent border-b border-slate-300 p-2 focus:border-rose-400 focus:outline-none placeholder-slate-500">
+                <input type="email" placeholder="Your email"
+                       class="w-full bg-transparent border-b border-slate-300 p-2 focus:border-rose-400 focus:outline-none placeholder-slate-500">
+            </div>
+
+            <input type="text" placeholder="Event type (wedding, editorial, lesson...)"
+                   class="w-full bg-transparent border-b border-slate-300 p-2 focus:border-rose-400 focus:outline-none placeholder-slate-500">
+
+            <textarea rows="4" placeholder="Date, location, and details"
+                      class="w-full bg-transparent border-b border-slate-300 p-2 focus:border-rose-400 focus:outline-none placeholder-slate-500"></textarea>
+
+            <button type="submit"
+                    class="w-full bg-slate-900 text-white font-bold uppercase tracking-[0.25em] px-12 py-4 rounded-full hover:bg-rose-500 transition duration-300 transform hover:scale-[1.01]">
+                Submit inquiry
+            </button>
+        </form>
+    </div>
+
+    <div class="mt-16 text-center text-xs md:text-sm text-slate-500 pt-8 border-t border-slate-100">
+        © 2025 Touch of Dalal. All rights reserved.
+    </div>
+</footer>
+
+<script>
+    function smoothReveal(elementId, delay) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            setTimeout(() => {
+                element.classList.remove('initial-hidden');
+                element.classList.add('animate-reveal');
+            }, delay);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        smoothReveal('title-touch', 100);
+        smoothReveal('title-dalal', 400);
+        smoothReveal('hero-slogan', 800);
+        smoothReveal('hero-cta', 1100);
+        smoothReveal('hero-image-box', 900);
+    });
+</script>
+</body>
+</html>
